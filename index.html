@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="output"></div>
+    <!-- this is a fecker npm -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Faker/3.0.1/faker.js"></script>
+    <script>
+        let data = []
+        for (var i = 1; i < 10; i++) {
+            let obj = {}
+            obj.id = i
+            obj.department = 'computer'
+            obj.email = faker.internet.email()
+            obj.name = faker.name.findName()
+            data.push(obj)
+        }
+        document.getElementById('output').innerHTML = JSON.stringify(data)
+        console.log(data)
+    </script>
+</body>
+
+</html>
